@@ -2,12 +2,9 @@ local orgs = import 'vendor/otterdog-defaults/otterdog-defaults.libsonnet';
 
 orgs.newOrg('iot.streamsheets', 'eclipse-streamsheets') {
   settings+: {
-    packages_containers_internal: false,
-    packages_containers_public: false,
     web_commit_signoff_required: false,
     workflows+: {
       actions_can_approve_pull_request_reviews: false,
-      default_workflow_permissions: "write",
     },
   },
   _repositories+:: [
@@ -25,8 +22,6 @@ orgs.newOrg('iot.streamsheets', 'eclipse-streamsheets') {
       dependabot_security_updates_enabled: true,
       description: "An open-source tool for processing stream data using a spreadsheet-like interface.",
       homepage: "https://docs.cedalo.com/",
-      secret_scanning: "disabled",
-      secret_scanning_push_protection: "disabled",
       topics+: [
         "apis",
         "automated",
@@ -47,9 +42,6 @@ orgs.newOrg('iot.streamsheets', 'eclipse-streamsheets') {
         "workflow-automation"
       ],
       web_commit_signoff_required: false,
-      workflows+: {
-        default_workflow_permissions: "write",
-      },
     },
   ],
 }
